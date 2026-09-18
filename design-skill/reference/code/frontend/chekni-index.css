@@ -1,0 +1,315 @@
+@import '@fontsource-variable/montserrat';
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-sans: "Montserrat Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-well: var(--well);
+  --color-rim: var(--rim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-action: var(--action);
+  --color-on-action: var(--on-action);
+
+  --color-scan: var(--scan);
+  --color-scan-wash: var(--scan-wash);
+  --color-history: var(--history);
+  --color-history-wash: var(--history-wash);
+  --color-guard: var(--guard);
+  --color-guard-wash: var(--guard-wash);
+  --color-premium: var(--premium);
+  --color-premium-wash: var(--premium-wash);
+  --color-ok: var(--ok);
+  --color-ok-wash: var(--ok-wash);
+  --color-warn: var(--warn);
+  --color-warn-wash: var(--warn-wash);
+  --color-danger: var(--danger);
+  --color-danger-wash: var(--danger-wash);
+  --color-unknown: var(--unknown);
+  --color-unknown-wash: var(--unknown-wash);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+:root {
+  color-scheme: light;
+
+  --safe-bottom: max(var(--tg-safe-area-inset-bottom, 0px), env(safe-area-inset-bottom, 0px));
+  --nav-space: calc(var(--safe-bottom) + 12px + 66px);
+
+  --paper: oklch(0.975 0.006 75);
+  --card: oklch(1 0 0);
+  --well: oklch(0.945 0.007 75);
+  --rim: oklch(0.885 0.009 75);
+  --ink: oklch(0.23 0.018 265);
+  --ink-soft: oklch(0.47 0.016 265);
+  --ink-faint: oklch(0.6 0.013 265);
+  --line: oklch(0.23 0.018 265 / 0.08);
+  --action: oklch(0.23 0.018 265);
+  --on-action: oklch(0.985 0.004 75);
+
+  --scan: oklch(0.64 0.15 160);
+  --scan-wash: oklch(0.64 0.15 160 / 0.12);
+  --history: oklch(0.62 0.19 252);
+  --history-wash: oklch(0.62 0.19 252 / 0.12);
+  --guard: oklch(0.6 0.2 292);
+  --guard-wash: oklch(0.6 0.2 292 / 0.12);
+  --premium: oklch(0.76 0.16 72);
+  --premium-wash: oklch(0.76 0.16 72 / 0.16);
+  --ok: oklch(0.6 0.15 160);
+  --ok-wash: oklch(0.64 0.15 160 / 0.12);
+  --warn: oklch(0.68 0.16 68);
+  --warn-wash: oklch(0.76 0.16 72 / 0.16);
+  --danger: oklch(0.6 0.21 28);
+  --danger-wash: oklch(0.64 0.2 28 / 0.11);
+  --unknown: oklch(0.6 0.013 265);
+  --unknown-wash: oklch(0.6 0.013 265 / 0.12);
+
+  --shadow-soft: 0 1px 2px oklch(0.3 0.02 265 / 0.06), 0 10px 24px -14px oklch(0.3 0.02 265 / 0.22);
+  --shadow-float: 0 1px 2px oklch(0.3 0.02 265 / 0.08), 0 18px 40px -18px oklch(0.3 0.02 265 / 0.35);
+  --veil: oklch(0.2 0.02 265 / 0.32);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper: oklch(0.165 0.01 265);
+  --card: oklch(0.215 0.012 265);
+  --well: oklch(0.255 0.013 265);
+  --rim: oklch(0.34 0.013 265);
+  --ink: oklch(0.965 0.005 75);
+  --ink-soft: oklch(0.76 0.012 265);
+  --ink-faint: oklch(0.62 0.013 265);
+  --line: oklch(1 0 0 / 0.075);
+  --action: oklch(0.95 0.006 75);
+  --on-action: oklch(0.2 0.015 265);
+
+  --scan: oklch(0.72 0.14 160);
+  --scan-wash: oklch(0.72 0.14 160 / 0.16);
+  --history: oklch(0.68 0.17 252);
+  --history-wash: oklch(0.68 0.17 252 / 0.16);
+  --guard: oklch(0.68 0.17 292);
+  --guard-wash: oklch(0.68 0.17 292 / 0.16);
+  --premium: oklch(0.8 0.15 75);
+  --premium-wash: oklch(0.8 0.15 75 / 0.16);
+  --ok: oklch(0.74 0.14 160);
+  --ok-wash: oklch(0.74 0.14 160 / 0.15);
+  --warn: oklch(0.8 0.15 75);
+  --warn-wash: oklch(0.8 0.15 75 / 0.15);
+  --danger: oklch(0.7 0.18 28);
+  --danger-wash: oklch(0.7 0.18 28 / 0.15);
+  --unknown: oklch(0.62 0.013 265);
+  --unknown-wash: oklch(0.62 0.013 265 / 0.16);
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 10px 24px -14px oklch(0 0 0 / 0.6);
+  --shadow-float: 0 1px 2px oklch(0 0 0 / 0.35), 0 18px 40px -16px oklch(0 0 0 / 0.75);
+  --veil: oklch(0.08 0.01 265 / 0.6);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior: none;
+    overflow-x: clip;
+    touch-action: manipulation;
+    transition: background-color 320ms var(--ease-out), color 320ms var(--ease-out);
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  button {
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+
+  button:disabled {
+    cursor: default;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--ink-faint);
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  ::selection {
+    background: var(--scan-wash);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--scan);
+    outline-offset: 2px;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .veil {
+    background: var(--veil);
+  }
+
+  .pt-safe {
+    padding-top: calc(var(--tg-content-safe-area-inset-top, 0px) + var(--tg-safe-area-inset-top, env(safe-area-inset-top, 0px)));
+  }
+
+  .pb-safe {
+    padding-bottom: var(--safe-bottom);
+  }
+
+  .nav-scrim {
+    background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--paper) 88%, transparent) 55%, var(--paper));
+  }
+
+  .mark-muted {
+    filter: grayscale(1) opacity(0.42);
+  }
+
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--well);
+  }
+
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 30%, oklch(1 0 0 / 0.35) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: skeleton-pass 1.4s var(--ease-out) infinite;
+  }
+
+  :root[data-theme="dark"] .skeleton::after {
+    background: linear-gradient(100deg, transparent 30%, oklch(1 0 0 / 0.05) 50%, transparent 70%);
+  }
+
+  .spin {
+    animation: spin 900ms linear infinite;
+  }
+
+  .breathe {
+    animation: breathe 2.8s var(--ease-out) infinite alternate;
+  }
+
+  .breathe-soft {
+    animation: breathe-soft 3.2s ease-in-out infinite alternate;
+  }
+
+  .sweep {
+    animation: sweep 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+
+  @keyframes skeleton-pass {
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes breathe {
+    from {
+      transform: translateY(0) rotate(-3deg);
+    }
+    to {
+      transform: translateY(-8px) rotate(3deg);
+    }
+  }
+
+  @keyframes breathe-soft {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes sweep {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(250%);
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton::after,
+    .spin,
+    .breathe,
+    .breathe-soft {
+    animation: breathe-soft 3.2s ease-in-out infinite alternate;
+  }
+
+  .sweep {
+      animation-duration: 0ms;
+      animation-iteration-count: 1;
+    }
+  }
+}
