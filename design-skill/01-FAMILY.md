@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- | --- |
 | **Анонка** | анонимные вопросы и сообщения по личной ссылке | синий `#1a84f7` | кремовое облачко-чат в чёрной маске | @AnteikuAnonkaBot | `/home/deploy/anteikuask` |
 | **AnteikuAnon** (Anteiku) | анонимный голосовой и текстовый чат с незнакомцами, комнаты, игры (мафия, Бункер, Алиас, Испорченный телефон) | коралловый, разделы по своим цветам | маски, облачка-чаты | (свой бот) | `/home/deploy/anteiku-live` (`/opt/teikto/AnteikuAnon`) |
-| **AnteiCut** | скачивание видео, фото и музыки по ссылке | коралловый `#ee5a3f` | кремовая стрелка вниз, нота, play | @AnteikuuCutBot | `/home/deploy/anteikucut` (исходник `/home/deploy/telegram/AnteikuCut`) |
+| **AnteiCut** | скачивание видео, фото и музыки по ссылке | коралловый `#ee5a3f` | кремовая стрелка вниз, нота, play | @AnteikuCutBot | `/home/deploy/anteikucut` (исходник `/home/deploy/telegram/AnteikuCut`) |
 | **Чекни** | проверка файлов, ссылок и QR на вирусы | изумрудный `#10b27a` | кремовый щит с галочкой и лупой | (свой бот) | `/home/deploy/telegram/chekni` |
 | **Evely** | сайт Minecraft-сервера | бордовый логотип | пиксельный 3D (другой стиль) | нет | `/opt/anteiku-craft-evely-website` |
 
